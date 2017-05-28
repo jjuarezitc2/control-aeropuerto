@@ -13,4 +13,4 @@ public class VueloCarga extends Vuelo{
 	public VueloCarga(Builder builder) {
 		super(builder);
 	}
-}
+} 

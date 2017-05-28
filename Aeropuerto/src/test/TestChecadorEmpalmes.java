@@ -40,3 +40,4 @@ public class TestChecadorEmpalmes {
 		System.out.println(EmpalmesChecker.seEmpalman(vueloCarga, vueloCarga2));
 	}
 }
+ 

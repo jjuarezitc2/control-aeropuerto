@@ -33,7 +33,7 @@ public class TestProxySaveVuelo {
 												   .periodicidad(periodicidad)
 												   .build();
 		
-		//
+		// 
 		try {
 			bd.persistVuelo(vueloCarga);
 		} catch (Exception e) {
@@ -42,3 +42,4 @@ public class TestProxySaveVuelo {
 		}
 	}
 }
+ 

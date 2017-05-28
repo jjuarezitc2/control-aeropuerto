@@ -7,3 +7,4 @@ public class BJuarez extends Aeropuerto{
 		this.ciudad = "Ciudad de Mexico";
 	}
 }
+ 

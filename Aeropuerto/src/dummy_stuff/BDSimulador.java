@@ -48,3 +48,4 @@ public class BDSimulador {
 		return lista;
 	}
 }
+ 

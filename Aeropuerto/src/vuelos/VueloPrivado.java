@@ -14,3 +14,4 @@ public class VueloPrivado extends Vuelo{
 		super(builder);
 	}
 }
+ 

@@ -78,6 +78,14 @@ public abstract class Vuelo {
 		this.periodicidad = builder.periodicidad;
 	}
 	
+	public Aeropuerto getAeropuertoOrigen(){
+		return this.aeropuertoOrigen;
+	}
+	
+	public Date getFecha(){
+		return this.fecha;
+	}
+	
 	public String toString(){
 		return "Origen: " + this.aeropuertoOrigen 
 				+ "\nDestino: " + this.aeropuertoDestino 

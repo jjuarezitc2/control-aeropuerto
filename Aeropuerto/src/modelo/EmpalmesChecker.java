@@ -1,5 +1,6 @@
 package modelo;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import aeropuertos.Aeropuerto;
@@ -27,6 +28,16 @@ public class EmpalmesChecker {
 			}
 		}else{
 			return false;
+		}
+		return false;
+	}
+
+	public static boolean seEmpalman(Vuelo vuelo, ArrayList<Vuelo> vuelosEnBD) {
+		for(int i = 0; i < vuelosEnBD.size(); i++){
+			Vuelo vueloEnBD = vuelosEnBD.get(i);
+			if(seEmpalman(vuelo, vueloEnBD)){
+				return true;
+			}
 		}
 		return false;
 	}

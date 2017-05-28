@@ -4,6 +4,7 @@ import java.util.Date;
 
 import aeropuertos.Aeropuerto;
 import aviones.Avion;
+import constantes.Periodicidad;
 
 
 /*
@@ -15,11 +16,15 @@ import aviones.Avion;
 public abstract class Vuelo {
 	@SuppressWarnings("unused")
 	private Avion avion;
-	private Aeropuerto aeropuertoOrigen;
-	private Aeropuerto aeropuertoDestino;
 	@SuppressWarnings("unused")
 	private Object capacidad;
+	@SuppressWarnings("unused")
+	private Periodicidad periodicidad;
+	
+	private Aeropuerto aeropuertoOrigen;
+	private Aeropuerto aeropuertoDestino;
 	private Date fecha;
+	
 	
 	public static abstract class Builder{
 		private Avion avion;
@@ -27,6 +32,7 @@ public abstract class Vuelo {
 		private Aeropuerto aeropuertoDestino;
 		private Object capacidad;
 		private Date fecha;
+		private Periodicidad periodicidad;
 		
 		public Builder() {}
 		
@@ -55,6 +61,11 @@ public abstract class Vuelo {
 			return this;
 		}
 		
+		public Builder periodicidad(Periodicidad periodicidad){
+			this.periodicidad = periodicidad;
+			return this;
+		}
+		
 		public abstract Vuelo build();
 	}
 	
@@ -64,6 +75,7 @@ public abstract class Vuelo {
 		this.aeropuertoDestino = builder.aeropuertoDestino;
 		this.capacidad = builder.capacidad;
 		this.fecha = builder.fecha;
+		this.periodicidad = builder.periodicidad;
 	}
 	
 	public String toString(){

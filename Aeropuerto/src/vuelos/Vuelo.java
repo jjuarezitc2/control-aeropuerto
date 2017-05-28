@@ -5,6 +5,13 @@ import java.util.Date;
 import aeropuertos.Aeropuerto;
 import aviones.Avion;
 
+
+/*
+ * TODO: definir el tipo que tendrá la variable "capacidad".
+ * Por el momento fue definida como Object. Es necesario hacer
+ * la definición y ajuste correspondiente. ¿Será un primitivo o
+ * definiremos una nueva clase?
+ * */
 public abstract class Vuelo {
 	@SuppressWarnings("unused")
 	private Avion avion;

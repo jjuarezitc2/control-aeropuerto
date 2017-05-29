@@ -28,6 +28,8 @@ public class ProxyBD implements BDInterface{
 			throw new Exception("No se puede guardar el vuelo porque se empalma.");
 		}
 	}
+	
+
 
 }
  

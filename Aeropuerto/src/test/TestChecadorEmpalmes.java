@@ -6,19 +6,21 @@ import aeropuertos.Aeropuerto;
 import aeropuertos.BJuarez;
 import aeropuertos.MEscobedo;
 import aviones.Avion;
-import aviones.Boeing747;
+import bd.BD;
 import constantes.Periodicidad;
+import dummy_stuff.BDSimulador;
 import modelo.EmpalmesChecker;
 import vuelos.Vuelo;
 import vuelos.VueloCarga;
 
 public class TestChecadorEmpalmes {
 	public static void main(String[] args){
-		Avion boeing = new Boeing747();
+		Avion boeing = BD.aviones.get(3);
 		Aeropuerto bJuarez = new BJuarez();
 		Aeropuerto mEscobedo = new MEscobedo();
-		Object capacidad = new Object();
+		int capacidad = 100;
 		Date fecha = new Date();
+		Date fecha2 = new Date();
 		Periodicidad periodicidad = Periodicidad.DIARIA;
 		
 		Vuelo vueloCarga = new VueloCarga.Builder().avion(boeing)

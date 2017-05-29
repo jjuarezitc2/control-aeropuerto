@@ -8,20 +8,25 @@ import aeropuertos.Aeropuerto;
 import aeropuertos.BJuarez;
 import aeropuertos.MEscobedo;
 import aviones.Avion;
-import aviones.Boeing747;
+import aviones.AvionCarga;
+import aviones.AvionComercial;
+import bd.BD;
 import constantes.Periodicidad;
 import vuelos.Vuelo;
 import vuelos.VueloCarga;
 
 public class BDSimulador {
+	
+	
+	
 	public static List<Vuelo> getAllVuelos(Aeropuerto aeropuerto){
 		List<Vuelo> lista = new ArrayList<Vuelo>();
 		
 		//
-		Avion boeing = new Boeing747();
+		Avion boeing = BD.aviones.get(3);
 		Aeropuerto bJuarez = new BJuarez();
 		Aeropuerto mEscobedo = new MEscobedo();
-		Object capacidad = new Object();
+		int capacidad = 50;
 		
 		// un vuelo específicamente el día 01 del mes 01 del año 2017
 		Date fecha = new Date(117,01,01);

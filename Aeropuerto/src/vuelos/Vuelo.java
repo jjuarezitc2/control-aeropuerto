@@ -1,5 +1,6 @@
 package vuelos;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import aeropuertos.Aeropuerto;
@@ -14,27 +15,38 @@ import constantes.Periodicidad;
  * definiremos una nueva clase?
  * */
 public abstract class Vuelo {
+	private String claveVuelo;
 	@SuppressWarnings("unused")
 	private Avion avion;
 	@SuppressWarnings("unused")
-	private Object capacidad;
+	private int capacidad;
 	@SuppressWarnings("unused")
-	private Periodicidad periodicidad;
-	
+	private Periodicidad periodicidad;	
 	private Aeropuerto aeropuertoOrigen;
 	private Aeropuerto aeropuertoDestino;
 	private Date fecha;
+	//Costo base del vuelo
+	private double costoBase;
 	
 	
 	public static abstract class Builder{
+		private String claveVuelo;
 		private Avion avion;
 		private Aeropuerto aeropuertoOrigen;
 		private Aeropuerto aeropuertoDestino;
-		private Object capacidad;
+		private int capacidad;
 		private Date fecha;
 		private Periodicidad periodicidad;
+		private double costoBase;
 		
-		public Builder() {}
+		public Builder() {
+			
+		}
+		
+		public Builder claveVuelo(){
+			this.claveVuelo = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+			return this;
+		}
 		
 		public Builder avion(Avion avion){
 			this.avion = avion;
@@ -51,7 +63,7 @@ public abstract class Vuelo {
 			return this;
 		}
 		
-		public Builder capacidad(Object capacidad){
+		public Builder capacidad(int capacidad){
 			this.capacidad = capacidad;
 			return this;
 		}
@@ -66,16 +78,23 @@ public abstract class Vuelo {
 			return this;
 		}
 		
+		public Builder costoBase(double costoBase){
+			this.costoBase = costoBase;
+			return this;
+		}
+		
 		public abstract Vuelo build();
 	}
 	
 	public Vuelo(Builder builder){
+		this.claveVuelo = builder.claveVuelo;
 		this.avion = builder.avion;
 		this.aeropuertoOrigen = builder.aeropuertoOrigen;
 		this.aeropuertoDestino = builder.aeropuertoDestino;
 		this.capacidad = builder.capacidad;
 		this.fecha = builder.fecha;
 		this.periodicidad = builder.periodicidad;
+		this.costoBase = builder.costoBase;
 	}
 	
 	public Aeropuerto getAeropuertoOrigen(){
@@ -86,8 +105,13 @@ public abstract class Vuelo {
 		return this.fecha;
 	}
 	
+	public double getCostoBase(){
+		return this.costoBase;
+	}
+	
 	public String toString(){
-		return "Origen: " + this.aeropuertoOrigen 
+		return "Clave vuelo: " + this.claveVuelo
+				+ "\nOrigen: " + this.aeropuertoOrigen 
 				+ "\nDestino: " + this.aeropuertoDestino 
 				+ "\nFecha: " + this.fecha;
 	}

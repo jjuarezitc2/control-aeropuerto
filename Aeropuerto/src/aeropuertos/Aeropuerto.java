@@ -11,6 +11,7 @@ public abstract class Aeropuerto {
 	protected String ciudad;
 	protected List<Pista> listaPistas;
 	
+	
 	public Aeropuerto(ArrayList<Pista> listaPistas){
 		this.listaPistas = listaPistas;
 	}
@@ -30,6 +31,10 @@ public abstract class Aeropuerto {
 	
 	public String toString(){
 		return this.nombre;
+	}
+	
+	public List<Pista> getListaPistas(){
+		return this.listaPistas;
 	}
 }
  

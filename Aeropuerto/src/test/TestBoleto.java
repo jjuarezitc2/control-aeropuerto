@@ -20,8 +20,8 @@ public class TestBoleto {
 	public static void main(String[] args) {
 		BD db = new BD();
 		Avion boeing = BD.aviones.get(3);//Avion comercial
-		Aeropuerto bJuarez = new BJuarez();
-		Aeropuerto mEscobedo = new MEscobedo();
+		Aeropuerto bJuarez = new BJuarez(null);
+		Aeropuerto mEscobedo = new MEscobedo(null);
 		int capacidad = boeing.getCapacidadPrimera()+boeing.getCapacidadTurista();
 		Date fecha = new Date();
 		Periodicidad periodicidad = Periodicidad.DIARIA;
@@ -41,7 +41,7 @@ public class TestBoleto {
 		
 		Boleto boleto = new BoletoComercial.Builder().clave("000001")
 														.nombre("Selene")
-														.apPaterno("Estévez")
+														.apPaterno("Estï¿½vez")
 														.vuelo(vueloComercial)
 														.prioridadAbordaje(PrioridadAbordaje.CLASE_TURISTA)																												
 														.build();

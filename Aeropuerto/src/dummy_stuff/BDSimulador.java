@@ -12,6 +12,7 @@ import aviones.AvionCarga;
 import aviones.AvionComercial;
 import bd.BD;
 import constantes.Periodicidad;
+import pistas.Pista;
 import vuelos.Vuelo;
 import vuelos.VueloCarga;
 
@@ -24,8 +25,8 @@ public class BDSimulador {
 		
 		//
 		Avion boeing = BD.aviones.get(3);
-		Aeropuerto bJuarez = new BJuarez();
-		Aeropuerto mEscobedo = new MEscobedo();
+		Aeropuerto bJuarez = new BJuarez(null);
+		Aeropuerto mEscobedo = new MEscobedo(null);
 		int capacidad = 50;
 		
 		// un vuelo específicamente el día 01 del mes 01 del año 2017

@@ -20,7 +20,7 @@ public class ProxyBD implements BDInterface{
 	public void persistVuelo(Vuelo vuelo) throws Exception {
 		
 		// TODO: hacer aquí la conexión a la bd... de momento solo es simulada
-		ArrayList<Vuelo> vuelosEnBD = (ArrayList<Vuelo>) BDSimulador.getAllVuelos(new BJuarez());
+		ArrayList<Vuelo> vuelosEnBD = (ArrayList<Vuelo>) BDSimulador.getAllVuelos(new BJuarez(null));
 		
 		if(! EmpalmesChecker.seEmpalman(vuelo, vuelosEnBD)){
 			this.bd.persistVuelo(vuelo);

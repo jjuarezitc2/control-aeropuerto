@@ -20,8 +20,8 @@ public class TestProxySaveVuelo {
 		
 		//
 		Avion boeing = BD.aviones.get(3);
-		Aeropuerto bJuarez = new BJuarez();
-		Aeropuerto mEscobedo = new MEscobedo();
+		Aeropuerto bJuarez = new BJuarez(null);
+		Aeropuerto mEscobedo = new MEscobedo(null);
 		int capacidad = 100;
 		Date fecha = new Date(117,01,01);
 		Periodicidad periodicidad = Periodicidad.DIARIA;

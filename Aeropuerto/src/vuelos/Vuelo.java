@@ -27,7 +27,8 @@ public abstract class Vuelo {
 	private Date fecha;
 	//Costo base del vuelo
 	private double costoBase;
-	
+	//duracion del vuelo en minutos
+	private long duracion;
 	
 	public static abstract class Builder{
 		private String claveVuelo;
@@ -38,6 +39,7 @@ public abstract class Vuelo {
 		private Date fecha;
 		private Periodicidad periodicidad;
 		private double costoBase;
+		private long duracion;
 		
 		public Builder() {
 			
@@ -83,6 +85,11 @@ public abstract class Vuelo {
 			return this;
 		}
 		
+		public Builder duracion(long duracion){
+			this.duracion = duracion;
+			return this;
+		}
+		
 		public abstract Vuelo build();
 	}
 	
@@ -95,6 +102,7 @@ public abstract class Vuelo {
 		this.fecha = builder.fecha;
 		this.periodicidad = builder.periodicidad;
 		this.costoBase = builder.costoBase;
+		this.duracion = builder.duracion;
 	}
 	
 	public Aeropuerto getAeropuertoOrigen(){
@@ -136,5 +144,6 @@ public abstract class Vuelo {
 				+ "\nOrigen: " + this.aeropuertoOrigen 
 				+ "\nDestino: " + this.aeropuertoDestino 
 				+ "\nFecha: " + this.fecha;
+				
 	}
 } 

@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pistas.Pista;
+import torre_control.TorreControl;
 
 public abstract class Aeropuerto {
 	
 	protected String nombre;
 	protected String ciudad;
 	protected List<Pista> listaPistas;
+	protected TorreControl torreControl;
 	
 	
 	public Aeropuerto(ArrayList<Pista> listaPistas){
@@ -35,6 +37,10 @@ public abstract class Aeropuerto {
 	
 	public List<Pista> getListaPistas(){
 		return this.listaPistas;
+	}
+	
+	public TorreControl getTorreControl(){
+		return this.torreControl;
 	}
 }
  

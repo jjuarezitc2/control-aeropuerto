@@ -3,8 +3,7 @@ package test;
 import java.util.Date;
 
 import aeropuertos.Aeropuerto;
-import aeropuertos.BJuarez;
-import aeropuertos.MEscobedo;
+
 import aviones.Avion;
 import bd.BD;
 import constantes.Periodicidad;
@@ -16,8 +15,8 @@ import vuelos.VueloCarga;
 public class TestChecadorEmpalmes {
 	public static void main(String[] args){
 		Avion boeing = BD.aviones.get(3);
-		Aeropuerto bJuarez = new BJuarez(null);
-		Aeropuerto mEscobedo = new MEscobedo(null);
+		Aeropuerto bJuarez = BD.aeropuertos.get(2);
+		Aeropuerto mEscobedo = BD.aeropuertos.get(5);
 		int capacidad = 100;
 		Date fecha = new Date();
 		Date fecha2 = new Date();

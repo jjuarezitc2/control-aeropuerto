@@ -13,8 +13,8 @@ public class TestBuilderVuelos {
 	public static void main(String[] args){
 		BD db = new BD();
 		Avion boeing = BD.aviones.get(0);
-		Aeropuerto bJuarez = new BJuarez(null);
-		Aeropuerto mEscobedo = new MEscobedo(null);
+		Aeropuerto bJuarez = BD.aeropuertos.get(2);
+		Aeropuerto mEscobedo = BD.aeropuertos.get(5);
 		int capacidad = boeing.getCapacidadPrimera()+boeing.getCapacidadTurista();
 		Date fecha = new Date();
 		Periodicidad periodicidad = Periodicidad.DIARIA;

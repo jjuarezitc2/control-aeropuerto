@@ -21,20 +21,11 @@ public class MapDestinos {
         }        
         return destinos;
     }
-    
-    public IATA getIATA() {
-        return codIATA;
-    }
-
-    public Ciudad getCiudad() {
-        return ciudad;
-    }
-    
-     
+           
     public Ciudad getDescriptionByCode(IATA iataCode) {
-        if (mapDestinos == null) {
+        /*if (mapDestinos == null) {
             initializeMapping();
-        }
+        }*/
         if (mapDestinos.containsKey(iataCode)) {
             return mapDestinos.get(iataCode);
         }

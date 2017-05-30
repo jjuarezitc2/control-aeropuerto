@@ -3,8 +3,7 @@ package test;
 import java.util.Date;
 
 import aeropuertos.Aeropuerto;
-import aeropuertos.BJuarez;
-import aeropuertos.MEscobedo;
+
 import aviones.Avion;
 import bd.BD;
 import boletos.Boleto;
@@ -20,8 +19,8 @@ public class TestBoleto {
 	public static void main(String[] args) {
 		BD db = new BD();
 		Avion boeing = BD.aviones.get(3);//Avion comercial
-		Aeropuerto bJuarez = new BJuarez(null);
-		Aeropuerto mEscobedo = new MEscobedo(null);
+		Aeropuerto bJuarez = BD.aeropuertos.get(2);
+		Aeropuerto mEscobedo = BD.aeropuertos.get(5);
 		int capacidad = boeing.getCapacidadPrimera()+boeing.getCapacidadTurista();
 		Date fecha = new Date();
 		Periodicidad periodicidad = Periodicidad.DIARIA;

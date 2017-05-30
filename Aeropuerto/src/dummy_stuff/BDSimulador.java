@@ -5,8 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import aeropuertos.Aeropuerto;
-import aeropuertos.BJuarez;
-import aeropuertos.MEscobedo;
+
 import aviones.Avion;
 import aviones.AvionCarga;
 import aviones.AvionComercial;
@@ -25,8 +24,8 @@ public class BDSimulador {
 		
 		//
 		Avion boeing = BD.aviones.get(3);
-		Aeropuerto bJuarez = new BJuarez(null);
-		Aeropuerto mEscobedo = new MEscobedo(null);
+		Aeropuerto bJuarez = BD.aeropuertos.get(0);
+		Aeropuerto mEscobedo = BD.aeropuertos.get(1);
 		int capacidad = 50;
 		
 		// un vuelo específicamente el día 01 del mes 01 del año 2017

@@ -1,10 +1,7 @@
 package boletos;
 
-import java.util.ArrayList;
-import java.util.List;
 import constantes.PrioridadAbordaje;
 import vuelos.Vuelo;
-import vuelos.Vuelo.Builder;
 
 public abstract class Boleto {
 	

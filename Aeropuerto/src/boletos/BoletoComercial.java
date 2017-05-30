@@ -37,8 +37,8 @@ public class BoletoComercial extends Boleto{
 		return "Clave boleto: " + this.getClave() + 
 				"\nNombre: " + this.getNombre() + " " + this.getApPaterno() + 
 				"\nPrioridad: " + this.getPrioridadAbordaje() + 
-				"\nOrigen: " + this.getVuelo().getAeropuertoOrigen() + 
-				"\nDestino: " + this.getVuelo().getAeropuertoDestino() + 
+				"\nOrigen: " + this.getVuelo().getAeropuertoOrigen().getCodeIATA() + 
+				"\nDestino: " + this.getVuelo().getAeropuertoDestino().getCodeIATA() + 
 				"\nCosto: $" + this.getCosto();
 	}
 	

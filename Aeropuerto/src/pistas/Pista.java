@@ -18,6 +18,10 @@ public class Pista {
 	private Aeropuerto aeropuerto;
 	private boolean disponible;
 	
+	public Pista(String codigo){
+		this.codigo = codigo;
+	}
+	
 	public Pista(String codigo, Aeropuerto aeropuerto){
 		this.codigo = codigo;
 		this.aeropuerto = aeropuerto;

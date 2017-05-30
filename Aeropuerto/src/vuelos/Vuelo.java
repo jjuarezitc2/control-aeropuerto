@@ -1,10 +1,14 @@
 package vuelos;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
 import aeropuertos.Aeropuerto;
 import aviones.Avion;
+import constantes.Aerolineas;
 import constantes.Periodicidad;
 
 
@@ -16,37 +20,39 @@ import constantes.Periodicidad;
  * */
 public abstract class Vuelo {
 	private String claveVuelo;
-	@SuppressWarnings("unused")
 	private Avion avion;
-	@SuppressWarnings("unused")
-	private int capacidad;
-	@SuppressWarnings("unused")
+
 	private Periodicidad periodicidad;	
 	private Aeropuerto aeropuertoOrigen;
 	private Aeropuerto aeropuertoDestino;
-	private Date fecha;
-	//Costo base del vuelo
+	private Calendar fechaSalida  = new GregorianCalendar(TimeZone.getTimeZone("America/Mexico_City"));
 	private double costoBase;
-	//duracion del vuelo en minutos
 	private long duracion;
+	Calendar fechaLlegadaReal;
+	private Aerolineas aerolinea; 
 	
 	public static abstract class Builder{
 		private String claveVuelo;
 		private Avion avion;
 		private Aeropuerto aeropuertoOrigen;
 		private Aeropuerto aeropuertoDestino;
-		private int capacidad;
-		private Date fecha;
+	//	private int capacidad;
+		private Calendar fechaSalida  = new GregorianCalendar(TimeZone.getTimeZone("America/Mexico_City"));
 		private Periodicidad periodicidad;
 		private double costoBase;
 		private long duracion;
+		private Aerolineas aerolinea; 
+		
 		
 		public Builder() {
-			
+			fechaSalida.set(Calendar.DAY_OF_YEAR,0);fechaSalida.set(Calendar.MONTH,0);fechaSalida.set(Calendar.DAY_OF_MONTH, 0);
+			fechaSalida.set(Calendar.HOUR_OF_DAY, 0); fechaSalida.set(Calendar.MINUTE, 0);fechaSalida.set(Calendar.SECOND, 0);fechaSalida.set(Calendar.MILLISECOND, 0);		
 		}
 		
-		public Builder claveVuelo(){
-			this.claveVuelo = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+		public Builder claveVuelo(String claveVluelo){
+			//PENDIENTE REFINRLA CREACION DE CLAVES DE VUELOS
+			//this.claveVuelo = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+			this.claveVuelo = claveVluelo;
 			return this;
 		}
 		
@@ -65,13 +71,9 @@ public abstract class Vuelo {
 			return this;
 		}
 		
-		public Builder capacidad(int capacidad){
-			this.capacidad = capacidad;
-			return this;
-		}
-		
-		public Builder fecha(Date fecha){
-			this.fecha = fecha;
+				
+		public Builder fecha(int dia, int mes, int anio){			
+			this.fechaSalida.set(anio, mes, dia);
 			return this;
 		}
 		
@@ -90,6 +92,17 @@ public abstract class Vuelo {
 			return this;
 		}
 		
+		public Builder horaSalida(int hora, int minuto){
+			this.fechaSalida.set(Calendar.HOUR_OF_DAY, hora);
+			this.fechaSalida.set(Calendar.MINUTE, minuto);
+			return this;
+		}
+		
+		public Builder aerolinea(Aerolineas aerolinea){
+			this.aerolinea = aerolinea;
+			return this;
+		}
+		
 		public abstract Vuelo build();
 	}
 	
@@ -97,27 +110,23 @@ public abstract class Vuelo {
 		this.claveVuelo = builder.claveVuelo;
 		this.avion = builder.avion;
 		this.aeropuertoOrigen = builder.aeropuertoOrigen;
-		this.aeropuertoDestino = builder.aeropuertoDestino;
-		this.capacidad = builder.capacidad;
-		this.fecha = builder.fecha;
+		this.aeropuertoDestino = builder.aeropuertoDestino;		
+		this.fechaSalida = builder.fechaSalida;
 		this.periodicidad = builder.periodicidad;
 		this.costoBase = builder.costoBase;
-		this.duracion = builder.duracion;
+		this.duracion = builder.duracion;	
+		this.aerolinea = builder.aerolinea;
+		
 	}
 	
 	public Aeropuerto getAeropuertoOrigen(){
 		return this.aeropuertoOrigen;
 	}
 	
-	public Date getFecha(){
-		return this.fecha;
-	}
-	
+		
 	public double getCostoBase(){
 		return this.costoBase;
-	}
-	
-	
+	}	
 	
 	public String getClaveVuelo() {
 		return claveVuelo;
@@ -127,8 +136,8 @@ public abstract class Vuelo {
 		return avion;
 	}
 
-	public int getCapacidad() {
-		return capacidad;
+	public Aerolineas getAerolinea() {
+		return aerolinea;
 	}
 
 	public Periodicidad getPeriodicidad() {
@@ -138,12 +147,20 @@ public abstract class Vuelo {
 	public Aeropuerto getAeropuertoDestino() {
 		return aeropuertoDestino;
 	}
+	
+	public long getDuracion() {
+		return duracion;
+	}
+
+	public Calendar getFechaSalida() {
+		return fechaSalida;
+	}
 
 	public String toString(){
 		return "Clave vuelo: " + this.claveVuelo
-				+ "\nOrigen: " + this.aeropuertoOrigen 
-				+ "\nDestino: " + this.aeropuertoDestino 
-				+ "\nFecha: " + this.fecha;
+				+ "\nOrigen: " + this.aeropuertoOrigen.getCodeIATA() 
+				+ "\nDestino: " + this.aeropuertoDestino .getCodeIATA()
+				+ "\nFecha: " + this.fechaSalida.getTime();
 				
 	}
 } 

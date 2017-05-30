@@ -30,7 +30,12 @@ public class BoletoPrivado extends Boleto {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Clave boleto: " + this.getClave() + 
+				"\nNombre: " + this.getNombre() + " " + this.getApPaterno() + 
+				"\nPrioridad: " + this.getPrioridadAbordaje() + 
+				"\nOrigen: " + this.getVuelo().getAeropuertoOrigen().getCodeIATA() + 
+				"\nDestino: " + this.getVuelo().getAeropuertoDestino().getCodeIATA() + 
+				"\nCosto: $" + this.getCosto() + 
+				"\nFecha: " + this.getVuelo().getFechaSalida().getTime();
 	}
 }

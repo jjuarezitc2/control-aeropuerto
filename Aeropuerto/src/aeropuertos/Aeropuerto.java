@@ -46,7 +46,7 @@ public abstract class Aeropuerto {
 			return this;
 		}
 		
-		public Builder  pistas( List<Pista> pisas){
+		public Builder  pistas( List<Pista> pistas){
 			this.pistas = pistas;
 			return this;
 		}

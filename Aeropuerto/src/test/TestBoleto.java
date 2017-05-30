@@ -8,6 +8,7 @@ import aviones.Avion;
 import bd.BD;
 import boletos.Boleto;
 import boletos.BoletoComercial;
+import constantes.Aerolineas;
 import constantes.Periodicidad;
 import constantes.PrioridadAbordaje;
 import vuelos.Vuelo;
@@ -22,17 +23,19 @@ public class TestBoleto {
 		Aeropuerto bJuarez = BD.aeropuertos.get(2);
 		Aeropuerto mEscobedo = BD.aeropuertos.get(5);
 		int capacidad = boeing.getCapacidadPrimera()+boeing.getCapacidadTurista();
-		Date fecha = new Date();
+		//Date fecha = new Date();
 		Periodicidad periodicidad = Periodicidad.DIARIA;
 		
-		Vuelo vueloComercial = new VueloComercial.Builder().claveVuelo()
+		Vuelo vueloComercial = new VueloComercial.Builder().claveVuelo("00001")
 												   .avion(boeing)
 												   .aeropuertoOrigen(bJuarez)
 												   .aeropuertoDestino(mEscobedo)
-												   .capacidad(capacidad)
-												   .fecha(fecha)
+												   //.capacidad(capacidad)
+												   .fecha(30, 5, 2017)
+												   .horaSalida(15, 30)
 												   .periodicidad(periodicidad)
 												   .costoBase(5_200)
+												   .aerolinea(Aerolineas.AEROMAR)
 												   .build();
 		
 		//System.out.println(boeing);

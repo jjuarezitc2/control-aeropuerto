@@ -5,6 +5,7 @@ import java.util.Date;
 import aeropuertos.*;
 import aviones.*;
 import bd.BD;
+import constantes.Aerolineas;
 import constantes.Periodicidad;
 import dummy_stuff.BDSimulador;
 import vuelos.*;
@@ -16,21 +17,23 @@ public class TestBuilderVuelos {
 		Aeropuerto bJuarez = BD.aeropuertos.get(2);
 		Aeropuerto mEscobedo = BD.aeropuertos.get(5);
 		int capacidad = boeing.getCapacidadPrimera()+boeing.getCapacidadTurista();
-		Date fecha = new Date();
+		//Date fecha = new Date();
 		Periodicidad periodicidad = Periodicidad.DIARIA;
 		
-		Vuelo vueloCarga = new VueloCarga.Builder().claveVuelo()
+		Vuelo vueloCarga = new VueloCarga.Builder().claveVuelo("00001")
 												   .avion(boeing)
 												   .aeropuertoOrigen(bJuarez)
 												   .aeropuertoDestino(mEscobedo)
-												   .capacidad(capacidad)
-												   .fecha(fecha)
+												   .fecha(2017,4,12)
 												   .periodicidad(periodicidad)
 												   .costoBase(5_200)
+												   .duracion(160)
+												   .horaSalida(9, 45)
+												   .aerolinea(Aerolineas.AEROMEXICO)
 												   .build();
 		
 		System.out.println(vueloCarga);
-		System.out.println(boeing);
+		//System.out.println(boeing);
 	}
 }
  

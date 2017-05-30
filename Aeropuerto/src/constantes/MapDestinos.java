@@ -7,8 +7,8 @@ public class MapDestinos {
 		
 	
     private Map<IATA, Ciudad> mapDestinos;
-    private IATA codIATA;
-    private Ciudad ciudad;  
+    //private IATA codIATA;
+    //private Ciudad ciudad;  
     public static MapDestinos destinos;
     
     private MapDestinos(){}

@@ -1,10 +1,6 @@
 package aviones;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
-import vuelos.Vuelo;
-import vuelos.Vuelo.Builder;
 
 public abstract class Avion {
 	

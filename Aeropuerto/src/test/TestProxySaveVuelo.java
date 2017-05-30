@@ -22,14 +22,14 @@ public class TestProxySaveVuelo {
 		Aeropuerto bJuarez = BD.aeropuertos.get(2);
 		Aeropuerto mEscobedo = BD.aeropuertos.get(5);
 		int capacidad = 100;
-		Date fecha = new Date(117,01,01);
+		//Date fecha = new Date(117,01,01);
 		Periodicidad periodicidad = Periodicidad.DIARIA;
 		
 		Vuelo vueloCarga = new VueloCarga.Builder().avion(boeing)
 												   .aeropuertoOrigen(bJuarez)
 												   .aeropuertoDestino(mEscobedo)
-												   .capacidad(capacidad)
-												   .fecha(fecha)
+												  // .capacidad(capacidad)
+												   .fecha(2017,4,12)
 												   .periodicidad(periodicidad)
 												   .build();
 		

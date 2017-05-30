@@ -1,6 +1,7 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import aeropuertos.Aeropuerto;
@@ -18,8 +19,8 @@ public class EmpalmesChecker {
 		Aeropuerto aeropuerto2 = v2.getAeropuertoOrigen();
 		
 		//
-		Date fecha1 = v1.getFecha();
-		Date fecha2 = v2.getFecha();
+		Calendar fecha1 = v1.getFechaSalida();
+		Calendar fecha2 = v2.getFechaSalida();
 		
 		//
 		if(aeropuerto1.getClass().equals( aeropuerto2.getClass())){

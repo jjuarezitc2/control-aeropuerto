@@ -29,22 +29,22 @@ public class BDSimulador {
 		int capacidad = 50;
 		
 		// un vuelo específicamente el día 01 del mes 01 del año 2017
-		Date fecha = new Date(117,01,01);
+		//Date fecha = new Date(117,01,01);
 		Periodicidad periodicidad = Periodicidad.DIARIA;
 		
 		Vuelo vueloCarga = new VueloCarga.Builder().avion(boeing)
 												   .aeropuertoOrigen(bJuarez)
 												   .aeropuertoDestino(mEscobedo)
-												   .capacidad(capacidad)
-												   .fecha(fecha)
+												   //.capacidad(capacidad)
+												   .fecha(14,5,2017)
 												   .periodicidad(periodicidad)
 												   .build();
 		
 		Vuelo vueloCarga2 = new VueloCarga.Builder().avion(boeing)
 				   .aeropuertoOrigen(mEscobedo)
 				   .aeropuertoDestino(bJuarez)
-				   .capacidad(capacidad)
-				   .fecha(fecha)
+				  // .capacidad(capacidad)
+				   .fecha(14,5,2017)
 				   .periodicidad(periodicidad)
 				   .build();
 		

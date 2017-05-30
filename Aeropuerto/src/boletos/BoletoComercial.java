@@ -1,5 +1,7 @@
 package boletos;
 
+import java.util.Calendar;
+
 import boletos.Boleto.Builder;
 import constantes.PrioridadAbordaje;
 
@@ -39,7 +41,10 @@ public class BoletoComercial extends Boleto{
 				"\nPrioridad: " + this.getPrioridadAbordaje() + 
 				"\nOrigen: " + this.getVuelo().getAeropuertoOrigen().getCodeIATA() + 
 				"\nDestino: " + this.getVuelo().getAeropuertoDestino().getCodeIATA() + 
-				"\nCosto: $" + this.getCosto();
+				"\nCosto: $" + this.getCosto() + 
+				"\nFecha salida: " + this.getVuelo().getFechaSalida().get(Calendar.DAY_OF_MONTH) + " de " + this.getVuelo().getFechaSalida().get(Calendar.MONTH) + " de " + this.getVuelo().getFechaSalida().get(Calendar.YEAR) + 
+				"\nHora salida: " + this.getVuelo().getFechaSalida().get(Calendar.HOUR_OF_DAY) + " : " + this.getVuelo().getFechaSalida().get(Calendar.MINUTE) + 
+				"\nAerolinea : " + this.getVuelo().getAerolinea();
 	}
 	
 	

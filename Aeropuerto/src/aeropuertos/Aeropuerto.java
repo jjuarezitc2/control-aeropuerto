@@ -1,9 +1,19 @@
 package aeropuertos;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import pistas.Pista;
+
 public abstract class Aeropuerto {
 	
 	protected String nombre;
 	protected String ciudad;
+	protected List<Pista> listaPistas;
+	
+	public Aeropuerto(ArrayList<Pista> listaPistas){
+		this.listaPistas = listaPistas;
+	}
 	
 	public String getNombre() {
 		return nombre;

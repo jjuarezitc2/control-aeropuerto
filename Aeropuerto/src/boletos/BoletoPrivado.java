@@ -27,4 +27,10 @@ public class BoletoPrivado extends Boleto {
 	public BoletoPrivado(Builder builder) {
 		super(builder);
 	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

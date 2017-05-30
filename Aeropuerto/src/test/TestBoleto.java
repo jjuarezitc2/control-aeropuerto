@@ -36,14 +36,14 @@ public class TestBoleto {
 												   .costoBase(5_200)
 												   .build();
 		
-		System.out.println(boeing);
-		System.out.println(vueloComercial);
+		//System.out.println(boeing);
+		//System.out.println(vueloComercial);
 		
 		Boleto boleto = new BoletoComercial.Builder().clave("000001")
 														.nombre("Selene")
-														.apPaterno("Estï¿½vez")
-														.vuelo(vueloComercial)
-														.prioridadAbordaje(PrioridadAbordaje.CLASE_TURISTA)																												
+														.apPaterno("Estévez")
+														.prioridadAbordaje(PrioridadAbordaje.CLASE_TURISTA)
+														.vuelo(vueloComercial)																																										
 														.build();
 		
 		

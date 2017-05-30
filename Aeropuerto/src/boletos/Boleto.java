@@ -20,7 +20,7 @@ public abstract class Boleto {
 		private String clave;
 		private String nombre;
 		private String apPaterno;	
-		private PrioridadAbordaje prioridadAbordaje; 		
+		protected PrioridadAbordaje prioridadAbordaje; 		
 		private Vuelo vuelo;
 		protected double costo;
 		
@@ -50,12 +50,7 @@ public abstract class Boleto {
 			this.vuelo = vuelo;
 			return this;
 		}
-		
-		//public abstract Builder costo();
-			//this.costo = (this.prioridadAbordaje.equals(PrioridadAbordaje.PRIMERA_CLASE)) ?  (this.vuelo.getCostoBase()*1.50) : (this.vuelo.getCostoBase()*1.20);
 			
-		//}			
-		
 		public abstract Boleto build();
 		
 		public Vuelo getVuelo(){
@@ -78,9 +73,30 @@ public abstract class Boleto {
 	public Vuelo getVuelo(){
 		return this.vuelo;
 	}
+	
+	
 
-	
-	
+	public String getClave() {
+		return clave;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public String getApPaterno() {
+		return apPaterno;
+	}
+
+	public PrioridadAbordaje getPrioridadAbordaje() {
+		return prioridadAbordaje;
+	}
+
+	public double getCosto() {
+		return costo;
+	}
+
+	public abstract String toString();	
 	
 	
 }

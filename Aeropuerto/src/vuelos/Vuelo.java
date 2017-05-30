@@ -109,6 +109,28 @@ public abstract class Vuelo {
 		return this.costoBase;
 	}
 	
+	
+	
+	public String getClaveVuelo() {
+		return claveVuelo;
+	}
+
+	public Avion getAvion() {
+		return avion;
+	}
+
+	public int getCapacidad() {
+		return capacidad;
+	}
+
+	public Periodicidad getPeriodicidad() {
+		return periodicidad;
+	}
+
+	public Aeropuerto getAeropuertoDestino() {
+		return aeropuertoDestino;
+	}
+
 	public String toString(){
 		return "Clave vuelo: " + this.claveVuelo
 				+ "\nOrigen: " + this.aeropuertoOrigen 

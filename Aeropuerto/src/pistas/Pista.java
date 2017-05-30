@@ -16,6 +16,7 @@ public class Pista {
 	 */
 	private String codigo;
 	private Aeropuerto aeropuerto;
+	private boolean disponible;
 	
 	public Pista(String codigo, Aeropuerto aeropuerto){
 		this.codigo = codigo;
@@ -29,6 +30,12 @@ public class Pista {
 	}
 	public Aeropuerto getAeropuerto() {
 		return aeropuerto;
+	}
+	public void setDisponible(boolean disponible){
+		this.disponible = disponible;
+	}
+	public boolean isDisponible(){
+		return this.disponible;
 	}
 	public void setAeropuerto(Aeropuerto aeropuerto) {
 		this.aeropuerto = aeropuerto;

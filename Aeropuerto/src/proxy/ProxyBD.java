@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import aeropuertos.*;
 import bd.BD;
 import dummy_stuff.BDSimulador;
-import modelo.EmpalmesChecker;
+import modeloooo.EmpalmesChecker;
 import vuelos.Vuelo;
 
 public class ProxyBD implements BDInterface{

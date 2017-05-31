@@ -8,7 +8,7 @@ import aviones.Avion;
 import bd.BD;
 import constantes.Periodicidad;
 import dummy_stuff.BDSimulador;
-import modelo.EmpalmesChecker;
+import modeloooo.EmpalmesChecker;
 import vuelos.Vuelo;
 import vuelos.VueloCarga;
 

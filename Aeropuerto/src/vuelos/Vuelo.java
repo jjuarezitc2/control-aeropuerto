@@ -159,8 +159,10 @@ public abstract class Vuelo {
 	public String toString(){
 		return "Clave vuelo: " + this.claveVuelo
 				+ "\nOrigen: " + this.aeropuertoOrigen.getCodeIATA() 
-				+ "\nDestino: " + this.aeropuertoDestino .getCodeIATA()
-				+ "\nFecha: " + this.fechaSalida.getTime();
+				+ "\nDestino: " + this.aeropuertoDestino .getCodeIATA()				
+				+ "\nFecha salida: " + this.fechaSalida.get(Calendar.DAY_OF_MONTH) + " de " + this.fechaSalida.get(Calendar.MONTH) + " de " + this.fechaSalida.get(Calendar.YEAR)  
+				+ "\nHora salida: " + this.fechaSalida.get(Calendar.HOUR_OF_DAY) + " : " + this.fechaSalida.get(Calendar.MINUTE) 
+				+ "\nAerolinea : " + this.aerolinea;
 				
 	}
 } 

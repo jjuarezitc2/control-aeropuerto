@@ -95,6 +95,53 @@ public class BD implements BDInterface{
 	public void persistVuelo(Vuelo vuelo) {
 		System.out.println("Supongamos que ya se guardo el vuelo... supongamos, porque no hay ni madres de JPA xD");
 	}
+	
+	public static Avion recuperarAvion(String clave){
+		
+		for(Avion a : aviones){
+			if(a.getClave().equals(clave))
+				return a;
+		}
+		
+		return null;		
+	}
+	
+	public static IATA stringToIATA(String sIATA){
+		
+		for(IATA c : IATA.values())
+			if(c.toString().equals(sIATA))
+				return c;
+		
+		return null;
+	}
+	
+	public static Periodicidad stringToPeriodicidad(String sPeriodicidad){
+		
+		for(Periodicidad c : Periodicidad.values())
+			if(c.toString().equals(sPeriodicidad))
+				return c;
+		
+		return null;
+	}
+	
+	public static Aeropuerto recuperaAeropuertoPorIATA(String sIATA){
+		
+		for(Aeropuerto a : aeropuertos)
+			if(a.getCodeIATA().equals(stringToIATA(sIATA)))
+				return a;
+		
+		
+		return null;
+	}
+	
+	public static Aerolineas stringToAerolinea(String sAerolineas){
+		
+		for(Aerolineas c : Aerolineas.values())
+			if(c.toString().equals(sAerolineas))
+				return c;
+		
+		return null;
+	}
 
 }
  

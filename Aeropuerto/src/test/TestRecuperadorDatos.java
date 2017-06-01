@@ -17,6 +17,9 @@ public class TestRecuperadorDatos {
 	FactoryRecuperadorDatos recuperadorDatos = new RecuperadorDatosCreacionVueloComercial();
 	InformacionVentana informacionVentana = recuperadorDatos.factoryMethod("XM004", "SEMANAL", "VER", "PAZ", "AEROMEXICO", "30", "5", "2017", "20", "40", "180", "8000");
 	
+	
+	
+	
 	Vuelo vueloComercial = new VueloComercial.Builder().claveVuelo("00001")
 			   .avion(((DatosCreacionVueloComercial)informacionVentana).getAvion())
 			   .aeropuertoOrigen(((DatosCreacionVueloComercial)informacionVentana).getAeropuertoOrigen())

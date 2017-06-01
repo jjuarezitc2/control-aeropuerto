@@ -9,9 +9,11 @@ import aviones.Avion;
 import bd.BD;
 import constantes.Aerolineas;
 import constantes.Periodicidad;
+import factory_method_recuperador_datos.*;
+
 
 public class DatosCreacionVueloComercial implements InformacionVentana {
-
+	public boolean informacionVerificada;
 	private String claveVuelo;
 	private Avion avion;
 	private Periodicidad periodicidad;	
@@ -80,6 +82,12 @@ public class DatosCreacionVueloComercial implements InformacionVentana {
 		this.setHoraSalida(Integer.parseInt(this.args[8]), Integer.parseInt(this.args[9]));
 		this.setDuracion(Long.parseLong(this.args[10]));
 		this.setCostoBase(Double.parseDouble(this.args[11]));
+	}
+
+
+	@Override
+	public InformacionVentana obtenerDatos() {		
+		return this;
 	} 	
 
 }

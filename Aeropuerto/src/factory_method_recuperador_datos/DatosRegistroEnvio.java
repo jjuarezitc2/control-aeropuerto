@@ -62,5 +62,12 @@ public class DatosRegistroEnvio implements InformacionVentana {
 		this.setDestino(BD.recuperaVueloPorClaveVuelo(this.args[4]));
 		this.setVueloCompleto(Boolean.parseBoolean(this.args[5]));
 	}
+
+
+	@Override
+	public InformacionVentana obtenerDatos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

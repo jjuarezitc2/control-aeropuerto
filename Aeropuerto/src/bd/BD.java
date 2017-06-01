@@ -160,5 +160,19 @@ public class BD implements BDInterface{
 		return null;
 	}
 
+	public static List<Avion> getAviones() {
+		return aviones;
+	}
+
+	public static List<Aeropuerto> getAeropuertos() {
+		return aeropuertos;
+	}
+
+	public static List<Vuelo> getVuelos() {
+		return vuelos;
+	}
+	
+	
+
 }
  

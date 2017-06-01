@@ -20,6 +20,7 @@ import torre_control.TorreControl;
 import vuelos.Vuelo;
 import vuelos.VueloCarga;
 import vuelos.VueloComercial;
+import zona_carga.Envio;
 
 public class BD implements BDInterface{
 	
@@ -27,6 +28,7 @@ public class BD implements BDInterface{
 	public static List<Avion> aviones = new ArrayList<>();
 	public static List<Aeropuerto> aeropuertos = new ArrayList<>();
 	public static List<Vuelo> vuelos = new ArrayList<>();
+	public static List<Envio> envios = new ArrayList<>();
 
 	static{		
 		try {
@@ -86,6 +88,8 @@ public class BD implements BDInterface{
 		vuelos.add(new VueloCarga.Builder().claveVuelo("00020").avion(aviones.get(1)).aeropuertoOrigen(aeropuertos.get(0)).aeropuertoDestino(aeropuertos.get(1)).fecha(3, 6, 2017).horaSalida(5, 30).periodicidad(Periodicidad.DIARIA).costoBase(30_000).aerolinea(Aerolineas.AEROMEXICO).build());
 		vuelos.add(new VueloCarga.Builder().claveVuelo("00021").avion(aviones.get(1)).aeropuertoOrigen(aeropuertos.get(0)).aeropuertoDestino(aeropuertos.get(1)).fecha(4, 6, 2017).horaSalida(5, 30).periodicidad(Periodicidad.DIARIA).costoBase(30_000).aerolinea(Aerolineas.AEROMEXICO).build());
 		vuelos.add(new VueloCarga.Builder().claveVuelo("00022").avion(aviones.get(1)).aeropuertoOrigen(aeropuertos.get(0)).aeropuertoDestino(aeropuertos.get(1)).fecha(5, 6, 2017).horaSalida(5, 30).periodicidad(Periodicidad.DIARIA).costoBase(30_000).aerolinea(Aerolineas.AEROMEXICO).build());
+		vuelos.add(new VueloCarga.Builder().capacidadTotal(500).capacidadOcupada(0).claveVuelo("00023").avion(aviones.get(1)).aeropuertoOrigen(aeropuertos.get(0)).aeropuertoDestino(aeropuertos.get(1)).fecha(4, 6, 2017).horaSalida(5, 30).periodicidad(Periodicidad.DIARIA).costoBase(30_000).aerolinea(Aerolineas.AEROMEXICO).build());
+		vuelos.add(new VueloCarga.Builder().capacidadTotal(500).capacidadOcupada(0).claveVuelo("00024").avion(aviones.get(1)).aeropuertoOrigen(aeropuertos.get(0)).aeropuertoDestino(aeropuertos.get(1)).fecha(5, 6, 2017).horaSalida(5, 30).periodicidad(Periodicidad.DIARIA).costoBase(30_000).aerolinea(Aerolineas.AEROMEXICO).build());
 		
 	}
 	
@@ -124,6 +128,10 @@ public class BD implements BDInterface{
 		return null;
 	}
 	
+	public static void addEnvio(Envio envio){
+		envios.add(envio);
+	}
+	
 	public static Aeropuerto recuperaAeropuertoPorIATA(String sIATA){
 		
 		for(Aeropuerto a : aeropuertos)
@@ -140,6 +148,15 @@ public class BD implements BDInterface{
 			if(c.toString().equals(sAerolineas))
 				return c;
 		
+		return null;
+	}
+
+	public static Vuelo recuperaVueloPorClaveVuelo(String string) {
+		for(Vuelo v : vuelos){
+			if(v.getClaveVuelo().equals(string)){
+				return v;
+			}
+		}
 		return null;
 	}
 
